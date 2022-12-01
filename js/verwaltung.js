@@ -33,7 +33,7 @@ function render(elem, state) {
             return
         }
         // Setze den carry der ersten Ausgabe auf die Erfassung der ersten Ausgabe
-        if(carry === 0) {
+        if (carry === 0) {
             carry = myZaehler.kWhErfassung;
         } else {
             // Ziehe von der Xten Erfassung den vorliegenden wert (gespeichert im carry) ab und gebe ihn in Form der difference aus
@@ -45,7 +45,9 @@ function render(elem, state) {
          <tr>
             <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
             <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
-            <td><img src="bilder/energy-consumption_dark.png">${carry === 0 ? '' : difference} kWh</td>
+            <td>
+               <img src="bilder/energy-consumption_dark.png">${difference === 0 ? '' : difference + 'kWh'}       
+            </td>
             <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
          </tr>`;
     }
@@ -71,7 +73,7 @@ function deleteEntry(index) {
 }
 
 
-function convert_date(x){
+function convert_date(x) {
     // weist das Datum einer localen Variable zu
     const date = x;
     //bindestrich wird entfernt
