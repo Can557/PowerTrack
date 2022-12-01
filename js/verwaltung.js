@@ -33,7 +33,7 @@ function render(elem, state) {
             return
         }
         // Setze den carry der ersten Ausgabe auf die Erfassung der ersten Ausgabe
-        if(carry === 0) {
+        if (carry === 0) {
             carry = myZaehler.kWhErfassung;
         } else {
             // Ziehe von der Xten Erfassung den vorliegenden wert (gespeichert im carry) ab und gebe ihn in Form der difference aus
@@ -41,13 +41,27 @@ function render(elem, state) {
             carry = myZaehler.kWhErfassung;
         }
         // Gebe HTML aus
-        content += `
+        if(difference !== 0) {
+            content += `
          <tr>
             <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
             <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
-            <td><img src="bilder/energy-consumption_dark.png"> kWh</td> /*${carry === 0 ? '' : difference}*/
+
+            <td>
+               <img src="bilder/energy-consumption_dark.png">${difference + 'kWh'}       
+            </td>
             <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
          </tr>`;
+        } else {
+            content += `
+         <tr>
+            <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
+            <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
+            <td style="width: 580px"><img><td>
+            <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
+         </tr>`;
+        }
+
     }
     // Schliest den tbody ganz am Ende
     elem.innerHTML = content + "</tbody>";
@@ -71,7 +85,7 @@ function deleteEntry(index) {
 }
 
 
-function convert_date(x){
+function convert_date(x) {
     // weist das Datum einer localen Variable zu
     const date = x;
     //bindestrich wird entfernt

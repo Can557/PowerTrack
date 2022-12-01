@@ -6,6 +6,7 @@ tr img{
 
 table {
     border-collapse: collapse;
+    table-layout: fixed;
 }
 #zf{
     background-color: red;
@@ -24,5 +25,9 @@ tr{
   }
 
 th{
+    text-align: center;
+}
+
+td{
     text-align: center;
 }
