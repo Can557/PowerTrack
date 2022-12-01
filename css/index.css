@@ -1,0 +1,24 @@
+.banner{
+    width: 100%;
+    height: auto;
+}
+
+.feature img{
+    float: left;
+    margin-left: 50px;
+    height: 80px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    margin: 50px 50px;
+    text-align: center;
+}
+
+
+.feature-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}

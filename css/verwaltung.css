@@ -1,0 +1,28 @@
+tr img{
+    width: 15%;
+    padding: 10px;
+    
+}
+
+table {
+    border-collapse: collapse;
+}
+#zf{
+    background-color: red;
+    color: white;
+}
+button{
+    float: right;
+}
+tr{
+    display: flex;
+    font-weight: bold;
+}
+
+.table tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+
+th{
+    text-align: center;
+}

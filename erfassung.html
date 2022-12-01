@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Erfassung</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/erfassung.css" />
+</head>
+
+<body>
+    <header class="fixed-width">
+        <a href="index.html">
+            <img src="bilder/powertrack_logo.png">
+        </a>
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="verwaltung.html">App</a>
+        </nav>
+    </header>
+    <main class="fixed-width">
+        <h1 cl>Zählerstand erfassen</h1>
+
+        <form>
+            <div id="create-grp-due">
+                <label for="due">Datum*</label>
+                <p>Tragen Sie hier das Ablesedatum des Z&auml;hlerstand ein.</p>
+                <input id="due" type="date">
+            </div>
+            <div class="create-grp-r">
+                <label for="responsible">Z&auml;hlerstand in kWh*</label>
+                <p>Tragen Sie hier den abgelesen Z&auml;lerstand in der Einheit kWh ein.</p>
+                <input id="responsible" type="number">
+            </div>
+        </form>
+
+        <div class="aktion">
+            <a href="verwaltung.html"><button class="white-button">Abbrechen</button></a>
+            <a href="verwaltung.html"><button onclick="addData(
+                document.getElementById('due').value,
+                document.getElementById('responsible').value)">Speichern</button></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="fixed-width footer-area">
+            <div class="footer-element">
+                <a href="https://www.dhbw-vs.de/">
+                    <img src="bilder/dhbw_logo.png" />
+                </a>
+            </div>
+            <div class="footer-element copyright">
+                <p>&copy; 2022 Web-Programmierung</p>
+            </div>
+            <div class="footer-element footer-nav">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+<script src="js/erfassung.js"></script>
+</body>
+
+</html>

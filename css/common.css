@@ -1,0 +1,127 @@
+/* Initial */
+* {
+    font-family: sans-serif;
+    line-height: 150%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 10px 50px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: black;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+.headline * {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.headline{
+    display: flex;
+}
+
+.headline a {
+    flex-grow: 1;
+    text-align: right;
+}
+
+
+header {
+    height: 80px;
+    display: flex;
+}
+
+header a, header a img {
+    height: inherit;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+    margin: auto;
+}
+
+header nav a {
+    margin: 0 20px;
+}
+
+header nav a:visited, header nav a:link, header nav a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #4d4d4d;
+    color: white;
+    margin-top: 20px;
+}
+
+.fixed-width {
+    width: 1000px;
+    margin: auto;
+}
+
+.footer-area {
+    display: flex;
+    padding: 30px 0;
+}
+
+.footer-element {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin:auto;
+}
+
+.footer-nav {
+    text-align: right;
+}
+
+.footer-nav a {
+    margin: 0 20px;
+    font-size: 0.8rem;
+}
+
+.footer-nav a:link, .footer-nav a:visited, .footer-nav a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer img {
+    height: 50px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    font-size: 0.8rem;
+}
+
+nav a{
+    font-weight: bold;
+}

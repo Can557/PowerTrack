@@ -1,0 +1,36 @@
+.white-button {
+    background-color: white;
+    color: black;
+    margin-right: 10px;
+}
+
+#create-grp-due input {
+    width: 20%;
+}
+
+.create-grp-responsible input {
+    width: 30%;
+}
+
+.aktion{
+    text-align: center;
+}
+
+form div {
+    margin-bottom: 30px;
+}
+
+form div p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+label{
+    font-weight: bold;
+}
+
+input {
+    width: 100px;
+    height: 30px;
+}
