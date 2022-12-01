@@ -27,7 +27,7 @@ function render(elem, state) {
     let carry = 0, difference = 0;
 
     // Für jeden Zähler eintrag in state
-    for (var myZaehler of state) {
+    for (var myZaehler of state.reverse()) {
         // Wenn kein Zähler vorhanden
         if (typeof myZaehler === 'undefined') {
             return
@@ -46,6 +46,7 @@ function render(elem, state) {
          <tr>
             <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
             <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
+
             <td>
                <img src="bilder/energy-consumption_dark.png">${difference + 'kWh'}       
             </td>
