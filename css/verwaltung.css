@@ -1,5 +1,5 @@
 tr img{
-    width: 15%;
+    width: 40px;
     padding: 10px;
     
 }
@@ -19,14 +19,28 @@ tr{
     display: flex;
     font-weight: bold;
 }
+/*tr div {
+    font-weight: normal;
+}*/
 
 .table tr:nth-child(odd) {
     background-color: lightgray;
   }
-
-th{
-    text-align: center;
+.small {
+    width: 5rem;
 }
+
+.large {
+    text-align: left;
+    padding-top: 20px;
+    width: 12rem;
+}
+.large-sec {
+    text-align: left;
+    padding-top: 10px;
+    width: 12rem;
+}
+
 
 td{
     text-align: center;

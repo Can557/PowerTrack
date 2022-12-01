@@ -15,10 +15,16 @@ function render(elem, state) {
     let content = `
         <thead>
             <tr id="zf">
-                <th></th>
-                <th><img src="bilder/counter_light.png">Letzterstand kWh</th>
-                <th><img src="bilder/energy-consumption_light.png"> gesamtverbauch(min-max)</th>
-                <th></th>
+                <th class="small"></th>
+                <th class="large"></th>
+                <th class="small"><img src="bilder/counter_light.png"></th>
+                <th class="large">${state[state.length - 1].kWhErfassung + ' kWh'}</th>
+                <th class="small"><img src="bilder/energy-consumption_light.png"></th>
+                <th class="large-sec"> 
+                    <div>${state[state.length - 1].kWhErfassung - state[0].kWhErfassung + ' kWh'}</div>
+                    <div style="font-weight: normal">${convert_date(state[0].datum) + ' - ' + convert_date(state[state.length - 1].datum)}</div>
+                </th>
+                <th class="small"></th>
              </tr>
         </thead>
         <tbody>
@@ -41,24 +47,32 @@ function render(elem, state) {
             carry = myZaehler.kWhErfassung;
         }
         // Gebe HTML aus
-        if(myZaehler.id !== 0) {
+        if (myZaehler.id !== 0) {
             content += `
          <tr>
-            <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
-            <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
-
-            <td>
-               <img src="bilder/energy-consumption_dark.png">${state[y].kWhErfassung - state[y+1].kWhErfassung + 'kWh'}       
+            <td class="small"><img src="bilder/calendar.png"></td>
+            <td class="large">${convert_date(myZaehler.datum)}</td>
+            <td class="small"><img src="bilder/counter_dark.png"></td>
+            <td class="large">${myZaehler.kWhErfassung} kWh</td>
+            <td class="small">
+               <img src="bilder/energy-consumption_dark.png">       
             </td>
-            <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
+            <td class="large-sec">
+                <div>${state[y].kWhErfassung - state[y + 1].kWhErfassung + ' kWh'}</div>
+                <div style="font-weight: normal">${convert_date(state[y + 1].datum) + ' - ' + convert_date(state[y].datum)}</div>
+            </td>
+            <td class="small"><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
          </tr>`;
         } else {
             content += `
          <tr>
-            <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
-            <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
-            <td style="width: 580px"><img><td>
-            <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
+            <td class="small"><img src="bilder/calendar.png"></td>
+            <td class="large">${convert_date(myZaehler.datum)}</td>
+            <td class="small"><img src="bilder/counter_dark.png"></td>
+            <td class="large">${myZaehler.kWhErfassung} kWh</td>
+            <td class="small"></td>
+            <td class="large"></td>
+            <td class="small"><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
          </tr>`;
         }
         y++;
