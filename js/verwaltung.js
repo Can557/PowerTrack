@@ -24,7 +24,7 @@ function render(elem, state) {
         <tbody>
      `;
 
-    let carry = 0, difference = 0;
+    let carry = 0, difference = 0, y = 0;
 
     // Für jeden Zähler eintrag in state
     for (var myZaehler of state.reverse()) {
@@ -41,14 +41,14 @@ function render(elem, state) {
             carry = myZaehler.kWhErfassung;
         }
         // Gebe HTML aus
-        if(difference !== 0) {
+        if(myZaehler.id !== 0) {
             content += `
          <tr>
             <td><img src="bilder/calendar.png">${convert_date(myZaehler.datum)}</td>
             <td><img src="bilder/counter_dark.png">${myZaehler.kWhErfassung} kWh</td>
 
             <td>
-               <img src="bilder/energy-consumption_dark.png">${difference + 'kWh'}       
+               <img src="bilder/energy-consumption_dark.png">${state[y].kWhErfassung - state[y+1].kWhErfassung + 'kWh'}       
             </td>
             <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
          </tr>`;
@@ -61,7 +61,7 @@ function render(elem, state) {
             <td><img src="bilder/delete.png" onclick="deleteEntry(${myZaehler.id})"></td>
          </tr>`;
         }
-
+        y++;
     }
     // Schliest den tbody ganz am Ende
     elem.innerHTML = content + "</tbody>";
